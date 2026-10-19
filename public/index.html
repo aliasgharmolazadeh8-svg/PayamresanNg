@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171411">
+  <title>نارنج | لابی عمومی</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="app-shell">
+
+    <header class="topbar glass">
+      <a class="brand" href="#" aria-label="نارنج">
+        <span class="brand-logo">ن</span>
+        <span class="brand-text">
+          <strong>نارنج</strong>
+          <small>جایی برای گپ زدن</small>
+        </span>
+      </a>
+
+      <div class="topbar-status">
+        <span class="live-indicator"></span>
+        <span>ارتباط زنده</span>
+      </div>
+
+      <button class="profile-chip" id="changeName" type="button">
+        <span class="profile-avatar" id="myAvatar">؟</span>
+        <span id="myName">مهمان</span>
+        <span class="edit-icon">✎</span>
+      </button>
+    </header>
+
+    <section class="lobby-layout">
+
+      <aside class="info-panel glass">
+        <div class="lobby-icon">✳</div>
+        <span class="eyebrow">PUBLIC ROOM</span>
+        <h1>لابی <span>نارنج</span></h1>
+        <p class="intro">
+          یک جای مشترک برای حرف زدن، آشنا شدن و به اشتراک گذاشتن
+          ایده‌ها.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="stat-card">
+          <span class="stat-icon">◉</span>
+          <div>
+            <strong id="userCount">۰</strong>
+            <span>کاربر آنلاین</span>
+          </div>
+          <span class="stat-live">LIVE</span>
+        </div>
+
+        <div class="room-details">
+          <div>
+            <span class="detail-dot orange-dot"></span>
+            <span>یک اتاق برای همه</span>
+          </div>
+          <div>
+            <span class="detail-dot green-dot"></span>
+            <span>ارسال زنده پیام‌ها</span>
+          </div>
+          <div>
+            <span class="detail-dot gray-dot"></span>
+            <span>حداکثر ۱۰۰ پیام اخیر</span>
+          </div>
+        </div>
+
+        <div class="guideline">
+          <span class="guideline-icon">✦</span>
+          <div>
+            <strong>فضای دوستانه</strong>
+            <p>با احترام حرف بزنیم تا همه از گفتگو لذت ببرن.</p>
+          </div>
+        </div>
+
+        <div class="info-footer">
+          <span class="footer-mark">N</span>
+          <span>ORANGE LOBBY</span>
+          <span class="footer-version">v1.0</span>
+        </div>
+      </aside>
+
+      <section class="chat-panel glass">
+        <header class="room-header">
+          <div class="room-heading">
+            <div class="room-symbol">#</div>
+            <div>
+              <h2>گفتگوی عمومی</h2>
+              <p><span class="live-indicator"></span> همه اینجا با هم صحبت می‌کنن</p>
+            </div>
+          </div>
+
+          <button class="room-menu" id="roomInfo" type="button"
+            aria-label="اطلاعات لابی">•••</button>
+        </header>
+
+        <div class="welcome-banner">
+          <div class="welcome-symbol">✦</div>
+          <div>
+            <strong>به لابی نارنج خوش اومدی!</strong>
+            <p>هر پیامی بفرستی، همه کاربران لابی می‌تونن ببیننش.</p>
+          </div>
+        </div>
+
+        <div class="messages-area" id="messagesArea"
+          aria-live="polite" aria-label="پیام‌های لابی">
+          <div class="loading-state" id="loadingState">
+            <span class="spinner"></span>
+            <span>در حال اتصال به لابی...</span>
+          </div>
+          <div id="messagesList"></div>
+        </div>
+
+        <div class="connection-bar">
+          <span class="connection-dot" id="connectionDot"></span>
+          <span id="connectionText">در حال اتصال...</span>
+          <span class="connection-spacer"></span>
+          <span id="messageCounter">۰/۱۰۰۰</span>
+        </div>
+
+        <form class="composer" id="messageForm">
+          <button class="emoji-button" id="emojiButton" type="button"
+            aria-label="افزودن ایموجی">☺</button>
+
+          <textarea id="messageInput" maxlength="1000" rows="1"
+            placeholder="پیامت رو اینجا بنویس..."
+            aria-label="متن پیام" disabled></textarea>
+
+          <button class="send-button" id="sendButton" type="submit"
+            aria-label="ارسال پیام" disabled>
+            <svg viewBox="0 0 24 24" width="21" height="21"
+              fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2 11 13"/>
+              <path d="m22 2-7 20-4-9-9-4Z"/>
+            </svg>
+          </button>
+        </form>
+
+        <footer class="chat-footer">
+          <span>با مهربونی بنویس <span class="heart">♥</span></span>
+          <span>ENTER برای ارسال · SHIFT + ENTER برای خط جدید</span>
+        </footer>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="nameModal">
+    <form class="name-modal glass" id="nameForm">
+      <div class="modal-logo">ن</div>
+      <span class="eyebrow">WELCOME TO NARENJ</span>
+      <h2>اول، خودت رو معرفی کن!</h2>
+      <p>یه اسم انتخاب کن تا با همون اسم وارد لابی عمومی بشی.</p>
+
+      <label for="nameInput">اسم نمایشی</label>
+      <input id="nameInput" type="text" maxlength="24"
+        minlength="1" autocomplete="nickname"
+        placeholder="مثلاً آرین..." required>
+
+      <p class="form-error" id="nameError"></p>
+
+      <button class="join-button" type="submit">
+        ورود به لابی <span>←</span>
+      </button>
+
+      <small class="privacy-note">
+        اسمت برای کاربران دیگه قابل مشاهده‌ست.
+      </small>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
